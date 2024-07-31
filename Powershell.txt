@@ -1,0 +1,65 @@
+##################################### Basics
+
+>>>> get-host ==> gets version
+>>>> update-help
+
+
+
+
+##################################### Get command intro
+
+>>>> get-help ==> "get-help" shows synopsis
+>>>> get-command ==> gets all commands 
+>>>> (get-command).count ==> counts the commands
+
+
+
+
+##################################### Get command *keyword*
+
+>>>> get-service ==> Gets the services on the computer.
+>>>> get-command *service* ==> keyword for finding services
+>>>> (get-command *service*).count 
+>>>> get-command *-service*
+
+
+
+
+##################################### Get command -module "Module Name"
+
+>>>> get-command -Module Microsoft.Powershell.Management
+>>>> get-command -ParameterName ComputerName
+
+
+
+
+##################################### Get help
+
+>>>> -examples -detailed -full -online
+
+
+
+
+##################################### Get help <command> -examples
+
+>>>> get-help get-service -examples ==> shows examples in services
+>>>> get-service | where-object {$_.status -eq "running"}		***running services
+>>>> get-service | where-object {$_.status -eq "stopped"}		***stopped services
+>>>> get-service *s | sort-object status		// services that start with s in order of status  
+
+>>>> get-process
+>>>> get-process | where-object {$_.workingSet -gt 20000000} ==> get all processes with a working set greater than a specified size (20MB)
+
+
+
+
+##################################### Get help <command> -detailed
+
+>>>> get-help get-service -detailed
+
+
+
+##################################### PowerShell ISE (Integrated Scripting Environment)
+
+>>>> powershell_ise.exe			*** didn't work
+>>>> 
